@@ -1,0 +1,6 @@
+
+GET    /                     user.UserController.list(request:Request)
+POST   /                     user.UserController.create(request:Request)
+
+GET    /:id                 user.UserController.show(request:Request,id)
+PUT    /:id                 user.UserController.update(request:Request, id)

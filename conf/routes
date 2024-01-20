@@ -1,0 +1,13 @@
+#GET     /                           controllers.HomeController.index
++nocsrf
+GET     /                           controllers.FrontendController.index()
+
+->     /v1/users                    users.Routes
++nocsrf
+GET    /users                       user.UserController.list(request:Request)
+GET    /export                      user.UserController.export(request:Request)
+# Serve static assets under public directory
+#GET     /*file                      controllers.FrontendController.assetOrDefault(file)
+GET    /assets/*file                controllers.Assets.versioned(path="/public", file: Asset)
+GET     /*file                      controllers.FrontendController.assetOrDefault(file)
+#GET    /webjars/*file               controllers.WebJarAssets.at(file)
